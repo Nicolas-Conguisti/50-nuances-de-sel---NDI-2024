@@ -25,7 +25,7 @@
             </p>
             <article id="equipe">
                 <div id="imageEquipe">
-
+                    <img src="ressources/img/photo_group.png" alt="Photo de l'équipe" id="photoImageEquipe">
                 </div>
                 <p id="descriEquipe">
                     Nous sommes l'équipe " 50 nuances de sel ! ", des étudiants de l'IUT de Bayonne

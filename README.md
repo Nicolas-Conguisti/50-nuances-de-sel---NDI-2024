@@ -4,11 +4,4 @@
 
 Que vous soyez jury ou simple visiteur, nous vous souhaitons un bon visionnage !
 
-Equipe :
-CONGUISTI Nicolas
-JULIARD Timeo
-LAVERGNE Elsa
-LORIDENT Julien
-MARTIN Solène
-SALLENAVE Xan
-VERNIS Gabriel
+Equipe : CONGUISTI Nicolas JULIARD Timeo LAVERGNE Elsa LORIDENT Julien MARTIN Solène SALLENAVE Xan VERNIS Gabriel
