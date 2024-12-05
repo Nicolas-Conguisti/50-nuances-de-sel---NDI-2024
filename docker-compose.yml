@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  apache_php:
+    image: php:8.3-apache # Image officielle PHP avec Apache intégré
+    container_name: Tetris
+    ports:
+      - "8080:80" # Redirige le port 8080 de l'hôte vers le port 80 du conteneur
+    volumes:
+      - ./Tetris:/var/www/html # Monte un dossier local pour les fichiers web
+
