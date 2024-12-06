@@ -9,13 +9,12 @@ $titre = "La peau et la Banquise";
 <html lang="fr">
 
 <head>
-    <include>header.php</include>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Page explicitant le lien entre la peau et la banquise.">
     <meta name="author" content="LAVERGNE Elsa aka PÉPITO">
     <!-- Lien vers des fichiers CSS -->
-    <link rel="stylesheet" href=".ressources/styles/styles.css">
+    <link rel="stylesheet" href="./ressources/styles/style.css">
     <style>
        
     </style>
@@ -24,11 +23,10 @@ $titre = "La peau et la Banquise";
 <body>
     <header>
         <?php include('./ressources/components/header.php'); ?>
-        
     </header>
 
-    <main>
-        <section>
+    <main >
+        <section class="paragraphesPeau">
         <h2>La peau</h2>
         <p>La peau a beaucoup d'utilités et celle qui nous intéresse principalement pour notre comparaison est son abilité à gérer notre température.<br>
         La peau, entre autre, nous évite de complètement fondre de l'intérieur en prenant une douche chaude, après un effort physique, à côté d'un chauffage etc...
@@ -42,7 +40,7 @@ $titre = "La peau et la Banquise";
         </section>
 
         
-        <section>
+        <section class="paragraphesPeau">
             <p>Sur une autre note....</p>
             <h2>Bienvenue sur le jeu de l'Ours Polaire</h2>
             <p>

@@ -260,3 +260,25 @@ body {
     color: #ffffff;
     font-size: 0.9em;
 }
+
+
+/* PARTIE PEAU */
+
+#jeuPolaire {
+    margin: 20px auto;
+}
+
+canvas {
+    background: linear-gradient(to bottom, #bafcfc, #76add1);
+    display: block;
+    margin: 10px auto;
+    border: 2px solid #007bff;
+}
+
+.paragraphesPeau{
+    font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        text-align: center;
+}
