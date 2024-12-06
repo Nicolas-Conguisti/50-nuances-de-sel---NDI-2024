@@ -33,13 +33,10 @@ function dessinerLesObjets() {
     ctx.fillRect(0, canvas.height - groundHeight, canvas.width, groundHeight);
 
     // Dessiner la hitbox centrée et fine
-    ctx.strokeStyle = 'red';
     const hitboxWidth = 20; // Largeur réduite de la hitbox
     const hitboxHeight = player.height - 10; // Hauteur de la hitbox légèrement réduite pour plus de tolérance
     const hitboxX = player.x + player.width / 2 - hitboxWidth / 2; // Centrer la hitbox sur l'ours
     const hitboxY = player.y + 5; // Positionner légèrement plus bas pour être plus permissif
-
-    ctx.strokeRect(hitboxX, hitboxY, hitboxWidth, hitboxHeight); // Dessiner la hitbox
     
     // Dessiner les trous
     holes.forEach(hole => {
