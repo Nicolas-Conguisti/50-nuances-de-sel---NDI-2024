@@ -1,0 +1,262 @@
+/* Style général */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    background-color: #87ceeb; /* Bleu clair, évoquant le ciel au-dessus de l'océan */
+}
+
+/* En-tête */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #1e3a61, #3b82f6); /* Dégradé bleu océan */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+#menu img {
+    width: 30px;
+    height: auto;
+    cursor: pointer; /* Indique que c'est cliquable */
+}
+
+/* Conteneur du menu */
+#menu {
+    position: relative;
+}
+
+/* Contenu du menu (masqué par défaut) */
+#menuContent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    width: 33.33%; /* Un tiers de la largeur de l'écran */
+    background-color: #1e3a61; /* Bleu profond */
+    color: #ffffff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%); /* Masqué par défaut */
+    transition: transform 0.3s ease-in-out; /* Animation fluide */
+    z-index: 1000; /* S'assure que le menu est au-dessus */
+}
+
+/* Liste des liens */
+#menuContent ul {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+}
+
+#menuContent ul li {
+    margin-bottom: 15px;
+}
+
+#menuContent ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2em;
+    display: block;
+    transition: color 0.3s;
+}
+
+#menuContent ul li a:hover {
+    color: #d1ecf1; /* Bleu clair */
+}
+
+/* Croix de fermeture */
+#closeMenu {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 1100; /* Au-dessus du contenu du menu */
+    transition: color 0.3s ease;
+}
+
+#closeMenu:hover {
+    color: #d1ecf1; /* Couleur plus claire au survol */
+}
+
+/* Logo */
+#logo {
+    width: 30px;
+    height: auto;
+}
+
+/* Section Intro */
+#intro {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(180deg, #3b82f6, #87ceeb);
+    color: #ffffff;
+}
+
+#titre {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+#descriNDI {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+#equipe {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#imageEquipe {
+    width: 150px;
+    height: 150px;
+    background-color: #1e3a61;
+    border-radius: 50%;
+    margin-right: 20px;
+    overflow: hidden;
+}
+
+#photoImageEquipe {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+#descriEquipe {
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+/* Partie Corps */
+#partieCorps {
+    padding: 50px 20px;
+    background-color: #e0f7fa; /* Bleu océan très clair */
+    color: #1e3a61;
+    text-align: center;
+}
+
+#corps {
+    margin: 0 auto;
+    max-width: 800px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+#corps img.squelette {
+    max-width: 100%; /* L'image ne dépassera pas la largeur de son conteneur */
+    height: auto; /* Maintient les proportions */
+    max-height: 700px; /* Limite la hauteur maximale de l'image */
+    display: block; /* Évite les marges supplémentaires autour de l'image */
+    margin: 0 auto; /* Centre l'image horizontalement */
+}
+
+#corps a{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: all 0.2s ease;
+}
+
+#corps a.organe.coeur{
+    width: 100px;
+    transform: translate(-50%, -255%);
+}
+
+#corps a.organe.coeur:hover{
+    transform: translate(-50%, -255%) scale(1.1);
+}
+
+#corps a.organe.poumon{
+    width: 90px;
+    transform: translate(-50%, -185%);
+}
+
+#corps a.organe.poumon:hover{
+    transform: translate(-50%, -185%) scale(1.1);
+}
+
+#corps a.organe.foie {
+    width: 90px;
+    transform: translate(-45%, -100%);
+}
+
+#corps a.organe.foie:hover{
+    transform: translate(-45%, -100%) scale(1.1);
+}
+
+#corps a img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+/* Page coeur */
+.coeur section.carte{
+    background: #b1def0;
+    padding-bottom: 300px;
+    padding-top: 50px;
+}
+
+.coeur .colonnes{
+    display: flex;
+}
+
+.coeur .colonne-1{
+    width: 65%
+}
+
+.coeur .colonne-2{
+    width: 35%;
+}
+
+.coeur a{
+    position: relative;
+    display: block;
+    width: 50px;
+}
+
+.coeur .container{
+    margin: auto;
+    padding: 0px 20px;
+    max-width: 1300px
+}
+
+.coeur img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.coeur div.image img{
+    position: absolute;
+}
+
+.coeur div.image{
+    width: 600px;
+    position: relative;
+}
+
+.coeur section.explication{
+    background: linear-gradient(#87ceeb 0%, rgba(9, 74, 121, 1) 89%);
+    padding: 30px 0;
+}
+
+/* Pied de page */
+#footer {
+    padding: 20px;
+    text-align: center;
+    background: #1e3a61;
+    color: #ffffff;
+    font-size: 0.9em;
+}
