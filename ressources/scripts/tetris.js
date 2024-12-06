@@ -1,5 +1,5 @@
 
-const canvas = document.getElementById('tetris');
+const canvas = document.getElementById('canvasTetris');
 const context = canvas.getContext('2d');
 const rows = 20;
 const cols = 10;

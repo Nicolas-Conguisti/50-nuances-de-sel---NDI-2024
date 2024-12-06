@@ -21,7 +21,7 @@
             </h1>
             <p id="descriNDI">
                 Pour cette édition de la nuit de l'info 2024, la protection des océans est mise à l'honneur ! <br>
-                L'objectif est de créer une application éducative pour sensibiliser les gens à la proction des océans.
+                L'objectif est de créer une application éducative pour sensibiliser les gens à la protection des océans.
             </p>
             <article id="equipe">
                 <div id="imageEquipe">
