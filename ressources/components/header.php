@@ -5,8 +5,9 @@
             <span id="closeMenu">&times;</span>
             <ul>
                 <li><a href="index.php">Accueil</a></li>
-                <li><a href="coeur.php">Coeur</a></li>
-                <li><a href="page2.html">Page 2</a></li>
+                <li><a href="tetris.php">Notre Tetris</a></li>
+                <li><a href="page3.html">Notre podcast</a></li>
+                <li><a href="page3.html">Notre application météo</a></li>
                 <li><a href="page3.html">Page 3</a></li>
             </ul>
         </div>
