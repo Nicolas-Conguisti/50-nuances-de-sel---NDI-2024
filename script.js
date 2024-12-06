@@ -78,9 +78,10 @@ function updateGame() {
         holes[i].x -= 5;
 
         // Vérifier si le trou est hors de l'écran
-        if (holes[i].x + holes[i].width < 0) {
+        if (holes[i].x + holes[i].width <= 0) {
             holes.splice(i, 1); // Supprimer le trou
             score += 10; // Augmenter le score
+            continue;
         }
 
         // Vérification de la collision avec la hitbox
@@ -91,11 +92,14 @@ function updateGame() {
 
         // Vérification de la collision entre la hitbox et les trous
         const holeBottom = canvas.height - groundHeight; // Position du bas des trous
+        
+        
+
         if (
-            hitboxX < holes[i].x + holes[i].width &&
-            hitboxX + hitboxWidth > holes[i].x &&
-            hitboxY + hitboxHeight > holeBottom && // Vérifier la collision avec le bas des trous
-            hitboxY < holeBottom + hitboxHeight // Vérifier si la hitbox touche le trou en haut aussi
+            hitboxX + hitboxWidth > holes[i].x &&  // Le côté droit de la hitbox dépasse le côté gauche du trou
+            hitboxX < holes[i].x + holes[i].width &&  // Le côté gauche de la hitbox dépasse le côté droit du trou
+            hitboxY + hitboxHeight > canvas.height - holeBottom && // La partie inférieure de la hitbox touche le niveau du sol
+            player.jumping == false
         ) {
             console.log('Collision détectée !');  // Ajout d'un log pour déboguer
             endGame(); // Fin de la partie

@@ -94,9 +94,7 @@ $anneeActuelle = date('Y');
         <h1><?php echo $titre; ?></h1>
         <nav>
             <ul>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="about.php">À propos</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <li><a href="index.php">Retour au début</a></li>
             </ul>
         </nav>
     </header>
@@ -135,9 +133,6 @@ $anneeActuelle = date('Y');
         </section>
     </main>
 
-    <footer>
-        <p>&copy; <?php echo $anneeActuelle; ?> - Tous droits réservés.</p>
-    </footer>
     <script src="script.js"></script>
 </body>
 
