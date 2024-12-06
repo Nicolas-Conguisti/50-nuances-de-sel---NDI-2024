@@ -59,4 +59,62 @@ img:not(.draggable) {
     cursor: not-allowed; /* Indique que l'image n'est pas bougeable */
 }
 
+.random-parent {
+    position: relative; /* Permet à ses enfants de se positionner en relatif */
+    overflow: hidden; /* Évite que les enfants débordent du parent */
+  }
+  
+  .random-child {
+    position: absolute; /* Nécessaire pour positionner chaque enfant indépendamment */
+  }
+
+
+
+
+
+  
+  /* L'image qui restera toujours derrière */
+  .image1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover; /* Couvre toute la surface du conteneur */
+    z-index: -1; /* Met cette image derrière l'autre */
+  }
+  
+  /* L'image qui bouge */
+  .image2 {
+    position: absolute;
+    top: 50%; /* Ajuste selon où tu veux l'image */
+    left: 50%; /* Ajuste selon où tu veux l'image */
+    transform: translate(-50%, -50%); /* Centrage de l'image */
+    animation: move 5s infinite; /* Animation pour bouger l'image */
+    z-index: 1; /* S'assure que l'image 2 est au-dessus de l'image 1 */
+  }
+  
+ 
+  
+#image_epavefinale{
+    position: absolute;
+    bottom: -1px;
+    left: 45%;
+}
+
+
+.text_de_phito
+{
+    background-color:  white;
+    position: absolute;
+    right: 12px;
+    top: 10%;
+    width : 20%;
+}
+
+
+
+
+
+
+
+
 
