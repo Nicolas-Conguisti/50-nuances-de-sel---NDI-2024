@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="page1.html">go page 1</a>
+    <button type="button" onclick="TestSetVarSessio2n()">send var</button>
+    <button type="button" onclick="TestGetVarSessio2n()">get var</button>
+</body>
+</html>
+
+<script>
+    function TestSetVarSessio2n()
+    {
+        sessionStorage.setItem('nom', 'Timeo');
+        sessionStorage.setItem('age', '21');        
+    }
+
+    function TestGetVarSessio2n()
+    {
+        const nom = sessionStorage.getItem('nom');
+        const age = sessionStorage.getItem('age');  
+        console.log(nom);           
+        console.log(age);           
+    }
+
+</script>

@@ -1,0 +1,62 @@
+#div_ciel
+{
+    height: 1000px;
+    /* background-color: rgb(134, 213, 255); */
+    background-image: url('image/globals/ciel.jpg');
+    background-size: cover; /* L'image s'étend pour couvrir tout l'élément */
+  background-repeat: no-repeat; /* Évite que l'image se répète */
+  background-position: center; /* Centre l'image */
+}
+#div_surface_mer
+{
+    height: 1000px;
+    /* background-color: rgb(79, 118, 228); */
+    background-image: url('image/globals/haut_de_mer.jpg');
+    background-size: cover; /* L'image s'étend pour couvrir tout l'élément */
+  background-repeat: no-repeat; /* Évite que l'image se répète */
+  background-position: center; /* Centre l'image */
+}
+#div_profondeur_1
+{
+    height: 1000px;
+    /* background-color: rgb(50, 25, 213); */
+    background-image: url('image/globals/milieu.jpg');
+    background-size: cover; /* L'image s'étend pour couvrir tout l'élément */
+  background-repeat: no-repeat; /* Évite que l'image se répète */
+  background-position: center; /* Centre l'image */
+}
+#div_profondeur_2
+{
+    height: 1000px;
+    /* background-color: rgb(21, 9, 183); */
+    background-image: url('image/globals/bas.webp');
+    background-size: cover; /* L'image s'étend pour couvrir tout l'élément */
+  background-repeat: no-repeat; /* Évite que l'image se répète */
+  background-position: center; /* Centre l'image */
+}
+#div_fond_mer
+{
+    height: 1000px;
+    /* background-color: rgb(20, 13, 108); */
+    background-image: url('image/globals/fond_marin.jpg');
+    background-size: cover; /* L'image s'étend pour couvrir tout l'élément */
+  background-repeat: no-repeat; /* Évite que l'image se répète */
+  background-position: center; /* Centre l'image */
+    position: relative;
+    border: 1px solid #000; /* Juste pour visualiser les bords du div */
+}
+
+img {
+    cursor: pointer;
+}
+
+.draggable {
+    position: absolute;
+    cursor: grab; /* Indique à l'utilisateur que l'image est déplaçable */
+}
+
+img:not(.draggable) {
+    cursor: not-allowed; /* Indique que l'image n'est pas bougeable */
+}
+
+
