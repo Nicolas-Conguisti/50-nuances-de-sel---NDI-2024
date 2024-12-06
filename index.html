@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plants vs Zombies</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="gameCanvas"></canvas>
+        <div class="sidebar">
+          <div class="plant" id="basic-plant">
+            <div class="icon plant" id="basic-plant"></div>
+            <span class="plant-cost">50</span>
+          </div>
+          <div class="plant" id="fast-plant">
+            <div class="icon plant" id="fast-plant"></div>
+            <span class="plant-cost">75</span>
+          </div>
+          <div class="plant" id="heavy-plant">
+            <div class="icon plant" id="heavy-plant"></div>
+            <span class="plant-cost">100</span>
+          </div>
+          <p>Sun Points: <span id="sun-points">100</span></p>
+        </div>
+      </div>
+  <script src="game.js"></script>
+</body>
+</html>

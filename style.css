@@ -1,0 +1,106 @@
+/* Réinitialisation des marges par défaut */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  
+  /* Conteneur principal pour empiler le canvas et la sidebar */
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Canvas: centré et s'ajuste à la largeur de l'écran */
+  #gameCanvas {
+    border: 2px solid #000;
+    /* background-color: #ddd; */
+    background-image: url("./image/fondMarin.jpg");
+    width: 100%;
+    max-width: 800px; /* Limite la taille maximale */
+    height: auto; /* Maintient les proportions */
+  }
+  canvas {
+    display: block;
+    margin: 0 auto;
+    max-width: 70vw; /* Réduire la largeur */
+    border: 2px solid #000;
+    background-color: #f0f0f0;
+  }
+  
+  .sidebar {
+    max-width: 25vw; /* Place pour la barre latérale */
+    margin: 10px auto;
+  }
+  
+  /* Sidebar: centrée et réorganisable */
+  .sidebar {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permet aux plantes de s'ajuster en ligne */
+    background-color: #fff;
+    border: 2px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    max-width: 800px; /* Aligne avec la taille du canvas */
+    box-sizing: border-box;
+  }
+  
+  /* Plantes dans la sidebar */
+  .plant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    text-align: center;
+  }
+  
+  .icon {
+    width: 50px;
+    height: 50px;
+    background-color: lightgreen;
+    border: 2px solid green;
+    border-radius: 5px;
+  }
+  
+  .plant-cost {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  /* Dispositions responsives */
+  @media screen and (max-width: 600px) {
+    #gameCanvas {
+      width: 90%; /* Canvas occupe presque toute la largeur */
+    }
+  
+    .sidebar {
+      flex-direction: column; /* Les plantes s'empilent en colonne */
+      align-items: center; /* Centrer la sidebar */
+    }
+  
+    .plant {
+      margin: 10px 0; /* Espace vertical entre les plantes */
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .icon {
+      width: 40px; /* Réduit la taille des icônes */
+      height: 40px;
+    }
+  
+    .plant-cost {
+      font-size: 12px; /* Texte légèrement plus petit */
+    }
+  }
