@@ -38,7 +38,20 @@
         <article id="partieCorps">
 
             <div id="corps">
-                <img src="ressources/img/squelette.png" alt="Squelette du corps humain">
+                <img class="squelette" src="ressources/img/squelette.png" alt="Squelette du corps humain">
+
+                <a class="organe coeur" href="coeur.php">
+                    <img src="ressources/img/organes/coeur.png" alt="coeur humain">
+                </a>
+                <a class="organe foie" href="foie.php">
+                    <img src="ressources/img/organes/foie.png" alt="foie humain">
+                </a>
+                <a class="organe poumon" href="poumon.php">
+                    <img  src="ressources/img/organes/poumon.png" alt="poumon humain">
+                </a>
+                
+                
+
             </div>
 
         </article>
@@ -49,6 +62,5 @@
 
     </footer>
     
-    <script src="ressources/scripts/script.js"></script>
 </body>
 </html>

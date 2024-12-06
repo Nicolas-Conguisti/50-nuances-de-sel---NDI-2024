@@ -149,9 +149,10 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
-#corps img {
+#corps img.squelette {
     max-width: 100%; /* L'image ne dépassera pas la largeur de son conteneur */
     height: auto; /* Maintient les proportions */
     max-height: 700px; /* Limite la hauteur maximale de l'image */
@@ -159,6 +160,97 @@ body {
     margin: 0 auto; /* Centre l'image horizontalement */
 }
 
+#corps a{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: all 0.2s ease;
+}
+
+#corps a.organe.coeur{
+    width: 100px;
+    transform: translate(-50%, -255%);
+}
+
+#corps a.organe.coeur:hover{
+    transform: translate(-50%, -255%) scale(1.1);
+}
+
+#corps a.organe.poumon{
+    width: 90px;
+    transform: translate(-50%, -185%);
+}
+
+#corps a.organe.poumon:hover{
+    transform: translate(-50%, -185%) scale(1.1);
+}
+
+#corps a.organe.foie {
+    width: 90px;
+    transform: translate(-45%, -100%);
+}
+
+#corps a.organe.foie:hover{
+    transform: translate(-45%, -100%) scale(1.1);
+}
+
+#corps a img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+/* Page coeur */
+.coeur section.carte{
+    background: #b1def0;
+    padding-bottom: 300px;
+    padding-top: 50px;
+}
+
+.coeur .colonnes{
+    display: flex;
+}
+
+.coeur .colonne-1{
+    width: 65%
+}
+
+.coeur .colonne-2{
+    width: 35%;
+}
+
+.coeur a{
+    position: relative;
+    display: block;
+    width: 50px;
+}
+
+.coeur .container{
+    margin: auto;
+    padding: 0px 20px;
+    max-width: 1300px
+}
+
+.coeur img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.coeur div.image img{
+    position: absolute;
+}
+
+.coeur div.image{
+    width: 600px;
+    position: relative;
+}
+
+.coeur section.explication{
+    background: linear-gradient(#87ceeb 0%, rgba(9, 74, 121, 1) 89%);
+    padding: 30px 0;
+}
 
 /* Pied de page */
 #footer {

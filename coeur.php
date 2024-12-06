@@ -5,54 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vogue et suis ta vie</title>
     <link rel="stylesheet" href="ressources/styles/style.css">
-    <script src="ressources/scripts/scriptCoeur.js"></script>
 </head>
 <body>
+    <header>
+        <?php include('ressources/components/header.php'); ?>
+    </header>
 
-    <?php
-    include('ressources/components/header.php');
-    ?>
-
-    <div class="coeur">
-
+    <main class="coeur">
         <section class="intro">
-            <div class="container">            
+            <div class="container">
                 <h1>Les courants marins, le coeur de l'océan</h1>
-                <p>L’eau des océans suit un cycle constant influencé par les différences de température et de densité. 
+                <p>
+                    L’eau des océans suit un cycle constant influencé par les différences de température et de densité. 
                     À l’équateur, sous l’effet du soleil, l’eau se réchauffe et se dilate, devenant moins dense. 
                     Elle se déplace alors vers les pôles, où elle rencontre des températures plus froides. 
                     En refroidissant, l’eau devient plus dense, s’enfonce dans les profondeurs océaniques et amorce son retour vers l’équateur. 
                     Ce processus, appelé circulation thermohaline, joue un rôle crucial dans la régulation de la température planétaire. 
-                    En arrivant de nouveau à l’équateur, l’eau se réchauffe à nouveau, et le cycle recommence.</p>
+                    En arrivant de nouveau à l’équateur, l’eau se réchauffe à nouveau, et le cycle recommence.
+                </p>
             </div>
         </section>
 
         <section class="carte">
-        
             <div class="container">
-
                 <div class="colonnes">
                     <div class="colonne-1">
                         <div class="image">
-                            <img class="sansCourant" src="./ressources/img/Hoelzelnaturalearth_2.png" alt="">
-                            <img class="courant" src="./ressources/img/Hoelzelnaturalearth.png" alt="">
-                            <img class="sel" src="./ressources/img/Hoelzelnaturalearth_3.png" alt="">
+                            <img class="sansCourant" src="./ressources/img/Hoelzelnaturalearth_2.png" alt="Sans Courant">
+                            <img class="courant" src="./ressources/img/Hoelzelnaturalearth.png" alt="Avec Courant">
+                            <img class="sel" src="./ressources/img/Hoelzelnaturalearth_3.png" alt="Avec Salinité">
                         </div>
                     </div>
-
                     <div class="colonne-2">
                         <div class="btn">
-                            Courant marin : 
-                            <a href="#" onclick="courant()">
-                                <img class="btnCourant" src="./ressources/img/btnON.png" alt="">
+                            Courant marin :
+                            <a id="btnCourant" href="#" class="toggle-btn">
+                                <img src="./ressources/img/btnON.png" alt="Bouton Courant">
                             </a>
                         </div>
                         <div class="btn">
-                            Eau salée : 
-                            <a href="#" onclick="sel()">
-                                <img class="btnSel" src="./ressources/img/btnON.png" alt="">
+                            Eau salée :
+                            <a id="btnSel" href="#" class="toggle-btn">
+                                <img src="./ressources/img/btnON.png" alt="Bouton Sel">
                             </a>
                         </div>
+                        <h2>Et si les courants disparaissent ?</h2>
+                        <p>
+                            S'il n'y a plus de courants marins dans l'océan, les eaux du pôle nord et sud refroidiraient grandement. <br>
+                            A l'inverse, la température des eaux proches de l'équateur augmenterait fortement, <br>
+                            cela aurait un immense impact sur la biodiversité !
+                        </p>
+                        <h2>Et si l'océan n'était pas salinisé</h2>
+                        <p>
+                            Si l'eau de l'océan n'est plus salée, une grande partie des animaux marins disparaîtraient, <br>
+                            ce serait un drame pour la biodiversité marine.
+                            L'activité humaine perturbe la quantité de sel présente dans l'océan.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -94,8 +102,8 @@
                 </p>
             </div>
         </section>
+    </main>
 
-    </div>
+    <script src="ressources/scripts/scriptCoeur.js"></script>
 </body>
 </html>
-
