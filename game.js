@@ -18,6 +18,28 @@ let previewPlantPosition = { x: 0, y: 0 }; // Position de la prévisualisation
 let gridSize = canvas.width / 5; // Taille dynamique d'une case
 let lives = 3; // Le joueur commence avec 3 vies
 
+// Obtenez les éléments du bouton et du modal
+const infoButton = document.getElementById('infoButton');
+const infoModal = document.getElementById('infoModal');
+const closeButton = document.getElementById('closeButton');
+
+// Ouvrir le pop-up lorsque le bouton est cliqué
+infoButton.addEventListener('click', () => {
+  infoModal.style.display = 'block';
+});
+
+// Fermer le pop-up lorsque l'utilisateur clique sur le bouton de fermeture
+closeButton.addEventListener('click', () => {
+  infoModal.style.display = 'none';
+});
+
+// Fermer le pop-up si l'utilisateur clique en dehors du contenu
+window.addEventListener('click', (event) => {
+  if (event.target === infoModal) {
+    infoModal.style.display = 'none';
+  }
+});
+
 
 // Ajustement responsive du canvas
 function resizeCanvas() {
@@ -66,6 +88,33 @@ function loadPlantImages() {
 
 // Appeler cette fonction au démarrage
 loadPlantImages();
+
+// Charger les images des zombies avec gestion des extensions
+const zombieImages = {};
+
+function loadZombieImages() {
+  const extensions = ['.png', '.jpg']; // Extensions possibles
+  ['basic', 'fast', 'strong', 'boss'].forEach((type) => {
+    let img = new Image();
+    img.onload = () => {
+      zombieImages[type] = img; // Charger si l'image est valide
+    };
+    img.onerror = () => {
+      // Essayer une autre extension si échec
+      const altExt = extensions.find((ext) => ext !== img.src.slice(-4));
+      if (altExt) {
+        img.src = `image/zombies/${type}${altExt}`;
+      } else {
+        console.error(`Image not found for zombie type: ${type}`);
+      }
+    };
+
+    img.src = `image/zombies/${type}.png`; // Commence par essayer .png
+  });
+}
+
+// Appeler cette fonction au démarrage
+loadZombieImages();
 
 
 // Classe Plante
@@ -129,42 +178,48 @@ class Zombie {
     this.speed = gridSize * 0.005; // Vitesse adaptée
     this.health = 50;
     this.color = 'brown';
+    this.type = type; // Type de zombie
     this.attackCooldown = 0;
 
     if (type === 'fast') {
       this.speed *= 2;
       this.health = 30;
-      this.color = 'orange';
     } else if (type === 'strong') {
       this.health = 100;
-      this.color = 'blue';
     } else if (type === 'boss') {
       this.width = gridSize * 1.5;
       this.height = gridSize * 1.5;
       this.health = 300;
       this.speed *= 0.5;
-      this.color = 'darkred';
     }
   }
-
 
   update() {
     if (this.attackCooldown > 0) {
       this.attackCooldown--;
     } else {
-      //this.x -= this.speed;
       this.y += this.speed;  // Les zombies se déplacent vers le bas (ajouter une vitesse verticale)
     }
   }
 
   draw() {
-    ctx.fillStyle = this.color;
-    ctx.fillRect(this.x, this.y, this.width, this.height);
+    const img = zombieImages[this.type];
+    if (img) {
+      ctx.drawImage(img, this.x, this.y, this.width, this.height);
+    } else {
+      console.error(`Image not loaded for zombie type: ${this.type}`);
+    }
 
+    // Afficher la barre de vie
     ctx.fillStyle = 'red';
     ctx.fillRect(this.x, this.y - 5, this.width, 3);
     ctx.fillStyle = 'green';
-    ctx.fillRect(this.x, this.y - 5, (this.health / (this.type === 'boss' ? 300 : 50)) * this.width, 3);
+    ctx.fillRect(
+      this.x,
+      this.y - 5,
+      (this.health / (this.type === 'boss' ? 300 : 50)) * this.width,
+      3
+    );
   }
 }
 
@@ -295,6 +350,64 @@ function drawHearts() {
     ctx.fill();
   }
 }
+
+// Fonction pour redémarrer le jeu
+function restartGame() {
+  // Réinitialisation des variables de jeu
+  gameRunning = true;
+  sunPoints = 100;
+  lives = 3; // Réinitialisation des vies
+  zombies = [];
+  plants = [];
+  projectiles = [];
+  timeElapsed = 0;
+  difficultyIncrement = 0;
+  
+  // Cache le bouton de redémarrage
+  document.getElementById('restartButton').style.display = 'none';
+
+  // Démarre la boucle de jeu
+  gameLoop();
+}
+
+// Fonction appelée lorsqu'un zombie atteint l'arrivée et le jeu est perdu
+function endGame() {
+  gameRunning = false;
+  // Afficher le bouton Restart
+  document.getElementById('restartButton').style.display = 'block';
+}
+
+// Ajouter un écouteur d'événement sur le bouton Restart
+document.getElementById('restartButton').addEventListener('click', restartGame);
+
+// Exemple de logique de fin de jeu : Si un zombie atteint l'arrivée
+function checkGameOver() {
+  zombies.forEach((zombie) => {
+    if (zombie.y + zombie.height >= canvas.height) {
+      lives -= 1; // Perdre une vie
+      if (lives <= 0) {
+        endGame(); // Fin du jeu si plus de vies
+      }
+      zombies = zombies.filter(z => z !== zombie); // Supprimer le zombie
+    }
+  });
+}
+
+// Boucle principale de jeu avec appel à checkGameOver
+function gameLoop() {
+  if (!gameRunning) return;
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Logique de mise à jour des plantes, projectiles et zombies...
+  // Appelez checkGameOver dans la boucle principale
+  checkGameOver();
+
+  // Continue le jeu
+  requestAnimationFrame(gameLoop);
+}
+
+
 
 // Boucle principale
 function gameLoop() {
