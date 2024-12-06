@@ -49,6 +49,10 @@
                 <a class="organe poumon" href="poumon.php">
                     <img  src="ressources/img/organes/poumon.png" alt="poumon humain">
                 </a>
+
+                <a class="organe peau" href="peau.php">
+                    <img  src="ressources/img/organes/peau.jpg" alt="peau humaine">
+                </a>
                 
                 
 

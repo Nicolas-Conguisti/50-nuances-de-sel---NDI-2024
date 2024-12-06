@@ -194,6 +194,19 @@ body {
     transform: translate(-45%, -100%) scale(1.1);
 }
 
+#corps a.organe.peau {
+    width: 65px;
+    transform: translate(20%, 45%);
+}
+
+#corps a.organe.peau img{
+    border-radius: 50%;
+}
+
+#corps a.organe.peau:hover{
+    transform:scale(1.1) translate(0%, 45%);
+}
+
 #corps a img{
     width: 100%;
     height: auto;
