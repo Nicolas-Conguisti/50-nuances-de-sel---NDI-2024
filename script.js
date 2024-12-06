@@ -14,6 +14,7 @@ let gameRunning = false;
 const gravity = 0.5;
 const groundHeight = 50;
 const jumpStrength = -10;
+let interval = 30;
 
 // Chargement des images
 const imageOursPolaire = new Image();
@@ -107,9 +108,16 @@ function updateGame() {
     }
 
     // Générer de nouveaux trous
-    if (Math.random() < 0.02) {
-        holes.push({ x: canvas.width, width: Math.random() * 100 + 30 });
-    }
+    if (Math.random() < 0.02 && interval <=0) {
+            holes.push({ x: canvas.width, width: Math.random() * 100 + 30 });
+            interval = 30;
+        }
+        else{
+            interval = interval-1;
+        }
+        
+    
+    
 
     // Mettre à jour le score
     scoreElement.textContent = `Score : ${score}`;
