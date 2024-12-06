@@ -1,0 +1,112 @@
+#div_ciel
+{
+    height: 1000px;
+    /* background-color: rgb(134, 213, 255); */
+    background-image: url('../../img/imagesPoumon/globals/ciel.jpg');
+    background-size: cover; /* L'image s'étend pour couvrir tout l'élément */
+  background-repeat: no-repeat; /* Évite que l'image se répète */
+  background-position: center; /* Centre l'image */
+}
+#div_surface_mer
+{
+    height: 1000px;
+    /* background-color: rgb(79, 118, 228); */
+    background-image: url('../../img/globals/haut_de_mer.jpg');
+    background-size: cover; /* L'image s'étend pour couvrir tout l'élément */
+  background-repeat: no-repeat; /* Évite que l'image se répète */
+  background-position: center; /* Centre l'image */
+}
+#div_profondeur_1
+{
+    height: 1000px;
+    /* background-color: rgb(50, 25, 213); */
+    background-image: url('../../img/globals/milieu.jpg');
+    background-size: cover; /* L'image s'étend pour couvrir tout l'élément */
+  background-repeat: no-repeat; /* Évite que l'image se répète */
+  background-position: center; /* Centre l'image */
+}
+#div_profondeur_2
+{
+    height: 1000px;
+    /* background-color: rgb(21, 9, 183); */
+    background-image: url('../../img/globals/bas.webp');
+    background-size: cover; /* L'image s'étend pour couvrir tout l'élément */
+  background-repeat: no-repeat; /* Évite que l'image se répète */
+  background-position: center; /* Centre l'image */
+}
+#div_fond_mer
+{
+    height: 1000px;
+    /* background-color: rgb(20, 13, 108); */
+    background-image: url('../../img/globals/fond_marin.jpg');
+    background-size: cover; /* L'image s'étend pour couvrir tout l'élément */
+  background-repeat: no-repeat; /* Évite que l'image se répète */
+  background-position: center; /* Centre l'image */
+    position: relative;
+    border: 1px solid #000; /* Juste pour visualiser les bords du div */
+}
+
+
+
+.draggable {
+    position: absolute;
+    cursor: grab; /* Indique à l'utilisateur que l'image est déplaçable */
+    cursor: pointer;
+}
+
+img:not(.draggable) {
+    cursor: not-allowed; /* Indique que l'image n'est pas bougeable */
+}
+
+.random-parent {
+    position: relative; /* Permet à ses enfants de se positionner en relatif */
+    overflow: hidden; /* Évite que les enfants débordent du parent */
+  }
+  
+  .random-child {
+    position: absolute; /* Nécessaire pour positionner chaque enfant indépendamment */
+  }
+
+
+
+
+
+  
+  /* L'image qui restera toujours derrière */
+  .image1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover; /* Couvre toute la surface du conteneur */
+    z-index: -1; /* Met cette image derrière l'autre */
+    opacity: 0.0; 
+  }
+  
+  /* L'image qui bouge */
+  .image2 {
+    position: absolute;
+    top: 50%; /* Ajuste selon où tu veux l'image */
+    left: 50%; /* Ajuste selon où tu veux l'image */
+    transform: translate(-50%, -50%); /* Centrage de l'image */
+    animation: move 5s infinite; /* Animation pour bouger l'image */
+    z-index: 1; /* S'assure que l'image 2 est au-dessus de l'image 1 */
+  }
+  
+ 
+  
+#image_epavefinale{
+    position: absolute;
+    bottom: -1px;
+    left: 45%;
+}
+
+
+.text_de_phito
+{
+    background-color:  white;
+    position: absolute;
+    right: 12px;
+    top: 10%;
+    width : 20%;
+    color: black;
+}

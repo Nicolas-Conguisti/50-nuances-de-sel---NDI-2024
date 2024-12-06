@@ -6,9 +6,10 @@
             <ul>
                 <li><a href="index.php">Accueil</a></li>
                 <li><a href="tetris.php">Notre Tetris</a></li>
-                <li><a href="page3.html">Notre podcast</a></li>
-                <li><a href="page3.html">Notre application météo</a></li>
-                <li><a href="page3.html">Page 3</a></li>
+                <li><a href="meteo.php">Notre application météo</a></li>
+
+                <li><a href="https://youtu.be/0eJuo1PQ2L0">1er podcast</a></li>
+                <li><a href="https://youtu.be/k-yV3pg2no8">2eme podcast</a></li>
             </ul>
         </div>
     </div>
