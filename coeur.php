@@ -55,11 +55,11 @@
                             A l'inverse, la température des eaux proches de l'équateur augmenterait fortement, <br>
                             cela aurait un immense impact sur la biodiversité !
                         </p>
-                        <h2>Et si l'océan n'était pas salinisé</h2>
+                        <h2>Et si l'océan n'était pas salinisé ? </h2>
                         <p>
                             Si l'eau de l'océan n'est plus salée, une grande partie des animaux marins disparaîtraient, <br>
                             ce serait un drame pour la biodiversité marine.
-                            L'activité humaine perturbe la quantité de sel présente dans l'océan.
+                            Le changement climatique avec l'activité humaine perturbe la quantité de sel présente dans l'océan.
                         </p>
                     </div>
                 </div>
